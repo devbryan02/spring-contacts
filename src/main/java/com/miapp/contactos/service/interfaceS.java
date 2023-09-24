@@ -6,7 +6,7 @@ import com.miapp.contactos.model.Contacto;
 
 public interface interfaceS {
   
-  public List<Contacto> list();
+  public List<Contacto> list(String palabra);
   public Contacto save(Contacto contacto);
   public Contacto update(Contacto contacto);
   public Contacto listById(Integer id);

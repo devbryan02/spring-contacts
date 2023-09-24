@@ -22,12 +22,22 @@
   </ul>
 
   <div class="container mt-3 d-flex justify-content-center">
-    <a th:href="@{/nuevo}" class="btn btn-info" href="">New contact</a>
+    
   </div>
 
   <div class="container mt-3">
     <div class="row justify-content-center">
       <div class="col col-md-10">
+        <a th:href="@{/nuevo}" class="btn btn-info mb-2" href="">New contact</a>
+        <form  th:action="@{/}" class="d-flex gap-2">
+          <div class="mb-3">
+            <input class="form-control" th:value="${palabra}" type="text" name="palabra" placeholder="Search by name" required>
+          </div>
+          <div class="mb-3">
+            <input class="btn btn-info" type="submit" value="Search">
+            <a th:href="@{/}" class="btn btn-success" href="">Clear</a>
+          </div>
+        </form>
         <table class="table table-hover table-bordered">
           <thead>
             <tr>

@@ -1,6 +1,7 @@
 package com.miapp.contactos.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +19,9 @@ public class ContactoC {
   private ContactoS service;
 
   @GetMapping("/")
-  public String index(Model model){
-    model.addAttribute("contactos", this.service.list());
+  public String index(Model model, @Param("palabra") String palabra){
+    model.addAttribute("contactos", this.service.list(palabra));
+    model.addAttribute("palabra", palabra);
     return "index";
   }
 

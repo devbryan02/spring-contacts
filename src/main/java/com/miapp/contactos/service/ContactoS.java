@@ -16,7 +16,10 @@ public class ContactoS implements interfaceS {
   private ContacoR repo;
 
   @Override
-  public List<Contacto> list() {
+  public List<Contacto> list(String palabra) {
+    if(palabra != null){
+      return this.repo.findAll(palabra);
+    }
     return this.repo.findAll();
   }
 
@@ -45,5 +48,5 @@ public class ContactoS implements interfaceS {
     String fechaActual = date.toString();
     return fechaActual;
   }
-  
+
 }
